@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Restart()
+    void Respawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

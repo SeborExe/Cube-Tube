@@ -55,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
             i++;
         }
 
-        Vector3 newRotation = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(
-            lockX ? startRotation.x : newRotation.x,
-            lockY ? startRotation.y : newRotation.y,
-            lockZ ? startRotation.z : newRotation.z
-        );
+        //Vector3 newRotation = transform.rotation.eulerAngles;
+        //transform.rotation = Quaternion.Euler(
+        //    lockX ? startRotation.x : newRotation.x,
+        //    lockY ? startRotation.y : newRotation.y,
+        //    lockZ ? startRotation.z : newRotation.z
+        //);
     }
 
     private void RunCharacter(float horizontalInput)
