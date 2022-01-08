@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
     public Text scoreText;
     void Update()
     {
-        scoreText.text = (player.position.z / 5).ToString("0");
+        scoreText.text = (player.position.z / 5).ToString("0") + '%';
 
     }
 }

@@ -17,11 +17,11 @@ public class GameManager : MonoBehaviour
         if (gameHasEnded == false)
         {
             gameHasEnded = true;
-            Invoke("Restart", restartDelay);
+            Invoke("Respawn", restartDelay);
         }
     }
 
-    void Restart()
+    void Respawn()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

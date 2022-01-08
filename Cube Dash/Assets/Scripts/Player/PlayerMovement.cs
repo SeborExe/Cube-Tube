@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             rb.AddForce(-movementSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
-        if (rb.position.y < -1f)
-            FindObjectOfType<GameManager>().EndGame();
+        //if (rb.position.y < -1f)
+        //    FindObjectOfType<GameManager>().EndGame();
 
         #if UNITY_EDITOR
             RunCharacter(Input.GetAxis("Horizontal"));
@@ -55,12 +55,12 @@ public class PlayerMovement : MonoBehaviour
             i++;
         }
 
-        Vector3 newRotation = transform.rotation.eulerAngles;
-        transform.rotation = Quaternion.Euler(
-            lockX ? startRotation.x : newRotation.x,
-            lockY ? startRotation.y : newRotation.y,
-            lockZ ? startRotation.z : newRotation.z
-        );
+        //Vector3 newRotation = transform.rotation.eulerAngles;
+        //transform.rotation = Quaternion.Euler(
+        //    lockX ? startRotation.x : newRotation.x,
+        //    lockY ? startRotation.y : newRotation.y,
+        //    lockZ ? startRotation.z : newRotation.z
+        //);
     }
 
     private void RunCharacter(float horizontalInput)
