@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
             rb.AddForce(-movementSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
-        if (rb.position.y < -1f)
-            FindObjectOfType<GameManager>().EndGame();
+        //if (rb.position.y < -1f)
+        //    FindObjectOfType<GameManager>().EndGame();
 
         #if UNITY_EDITOR
             RunCharacter(Input.GetAxis("Horizontal"));
