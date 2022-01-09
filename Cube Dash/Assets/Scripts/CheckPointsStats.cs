@@ -5,12 +5,12 @@ using UnityEngine;
 public class CheckPointsStats : MonoBehaviour
 {
     private const string CheckPoint = "CheckPoint";
-    public static int GetActualDestroyed()
+    public static float GetActualCheckPoint()
     {
-        return PlayerPrefs.GetInt(CheckPoint, 0);
+        return PlayerPrefs.GetFloat(CheckPoint, 0);
     }
-    public static void SetCurrentDestroyedMeteors(int CheckPointNumber)
+    public static void SetCurrentCheckPoint(float CheckPointNumber)
     {
-        PlayerPrefs.SetInt(CheckPoint, CheckPointNumber);
+        PlayerPrefs.SetFloat(CheckPoint, CheckPointNumber);
     }
 }

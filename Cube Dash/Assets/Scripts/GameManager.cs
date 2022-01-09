@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
+    public bool gameHasEnded = false;
     public float restartDelay = 2f;
 
     public GameObject completeLevelUI;
@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     void Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (CheckPointsStats.GetActualCheckPoint() == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        else
+            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
     }
 }

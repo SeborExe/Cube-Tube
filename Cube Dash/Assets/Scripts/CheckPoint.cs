@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        float pos = transform.position.z;
+
+        CheckPointsStats.SetCurrentCheckPoint(pos);
     }
 
-    void Update()
+    public IEnumerator CheckPointCoroutine(float pos)
     {
-        
+        var player = FindObjectOfType<PlayerMovement>();
+
+        player.enabled = false;
+        yield return new WaitForEndOfFrame();
+
+        player.transform.position = new Vector3(0, 2, pos);
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        yield return new WaitForEndOfFrame();
+        player.enabled = true;
+        FindObjectOfType<GameManager>().gameHasEnded = false;
     }
 }

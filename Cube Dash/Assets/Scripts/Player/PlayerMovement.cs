@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {   
+    {
         rb.AddForce(0, 0, speed * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.D))
