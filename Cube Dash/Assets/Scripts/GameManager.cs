@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel()
     {
+        //Aktywowaæ now¹ stronê koñcow¹
         completeLevelUI.SetActive(true);
     }
     public void EndGame()
