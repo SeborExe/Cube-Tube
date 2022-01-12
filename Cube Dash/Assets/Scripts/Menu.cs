@@ -27,4 +27,9 @@ public class Menu : MonoBehaviour
         MainMenuCanvas.SetActive(true);
         OptionsPanel.SetActive(false);
     }
+
+    public void GoToTubes()
+    {
+        SceneManager.LoadScene("TubesAndLevels");
+    }
 }

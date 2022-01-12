@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class LevelStats
 {
-    private const string All_Stars = "all_stars";
+    private const string All_Stars = "all_starss";
 
     public static void SetAllStars(int points)
     {
