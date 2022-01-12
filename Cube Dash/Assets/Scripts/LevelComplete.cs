@@ -30,6 +30,7 @@ public class LevelComplete : MonoBehaviour
             {
                 PlayerPrefs.SetInt(level, 1);
                 LevelStats.SetAllStars(1);
+                //Debug.Log(PlayerPrefs.GetInt(level));
             }
         }
 
@@ -43,6 +44,7 @@ public class LevelComplete : MonoBehaviour
             {
                 PlayerPrefs.SetInt(level, 2);
                 LevelStats.SetAllStars(2);
+                //Debug.Log(PlayerPrefs.GetInt(level));
             }
         }
 
@@ -56,6 +58,7 @@ public class LevelComplete : MonoBehaviour
             {
                 PlayerPrefs.SetInt(level, 3);
                 LevelStats.SetAllStars(3);
+                //Debug.Log(PlayerPrefs.GetInt(level));
             }
         }
 
@@ -63,7 +66,7 @@ public class LevelComplete : MonoBehaviour
         {
             Stars[0].SetActive(true);
             PlayerPrefs.SetInt(next + "Unlocked", 1);
-            Debug.Log(next + "Unlocked");
+            //Debug.Log(next + "Unlocked");
         }
     }
 

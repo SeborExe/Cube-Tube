@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Transform player;
+    PlayerMovement player;
     public Text scoreText;
 
     public int MapLength = 5;
     void Update()
     {
-        scoreText.text = (player.position.z / MapLength).ToString("0") + '%';
-
+        player = FindObjectOfType<PlayerMovement>();
+        scoreText.text = (player.transform.position.z / MapLength).ToString("0") + '%';
     }
 }
