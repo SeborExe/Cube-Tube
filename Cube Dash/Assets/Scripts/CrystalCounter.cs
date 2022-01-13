@@ -21,4 +21,12 @@ public class CrystalCounter : MonoBehaviour
         var text = crystalInactive + "/ " + crystalCount;
         CrystalCounterText.text = text;
     }
+
+    public int ReachedCrystals()
+    {
+        var crystals = FindObjectsOfType<Crystal>();
+        var crystalInactive = crystals.Count(crystal => !crystal.Active);
+
+        return crystalInactive;
+    }
 }

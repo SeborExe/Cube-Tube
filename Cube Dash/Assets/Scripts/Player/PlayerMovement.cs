@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     {
         ScreenWidth = Screen.width;
         startRotation = transform.rotation.eulerAngles;
+
+        StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
     }
 
     void FixedUpdate()
