@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    [SerializeField] private SkinManager skinManager;
 
     public float speed = 1000f;
     public float movementSpeed = 500f;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         ScreenWidth = Screen.width;
         startRotation = transform.rotation.eulerAngles;
 
+        GetComponent<MeshRenderer>().material = skinManager.GetSelectedSkin().material;
         StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
     }
 
