@@ -40,12 +40,15 @@ public class SkinShopItem : MonoBehaviour
     {
         int coins = PlayerPrefs.GetInt("money", 0);
 
-        if(coins >= skin.cost && skinManager.IsUnlocked(skinIndex))
+        if(coins >= skin.cost && !skinManager.IsUnlocked(skinIndex))
         {
             PlayerPrefs.SetInt("money", coins - skin.cost);
             skinManager.Unlock(skinIndex);
             buyButton.gameObject.SetActive(false);
             skinManager.SelectSkin(skinIndex);
+        }
+        else {
+            Debug.Log("Nooo");
         }
     }
 }

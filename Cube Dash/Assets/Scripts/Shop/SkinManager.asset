@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SkinManager
   m_EditorClassIdentifier: 
   skins:
-  - cost: 200
+  - cost: 1
     material: {fileID: 2100000, guid: e3a63657e6ae28345b766fe10e1b25bc, type: 2}
+  - cost: 5
+    material: {fileID: 2100000, guid: cecafbe7afa62ae48b63d3f71eaa7a81, type: 2}
