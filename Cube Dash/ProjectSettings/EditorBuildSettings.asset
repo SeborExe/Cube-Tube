@@ -13,13 +13,16 @@ EditorBuildSettings:
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
     path: Assets/Scenes/Level2.unity
-    guid: ca943b7c93f972a448a758fe5b370cbe
+    guid: ce01dd122c317304d983bad096d6e8f9
   - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: 9938b3dee06758f4d880f21e3101a063
   - enabled: 1
     path: Assets/Scenes/TubesAndLevels.unity
     guid: 9436b3e94dcc0e847a159b939a7ba8ff
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 61b3f71bee4fcac4dad428a6663f0ec2
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 44283d2068f18a047aef07caa48c7c51, type: 2}

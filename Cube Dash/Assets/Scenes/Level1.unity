@@ -1340,6 +1340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+  gameIsAcive: 1
 --- !u!1001 &113832413731427216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1432,6 +1433,12 @@ PrefabInstance:
       propertyPath: speed
       value: 2500
       objectReference: {fileID: 0}
+    - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
+        type: 3}
+      propertyPath: skinManager
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a3bbd742afe0ad4fbcf2bdf07d48f5b,
+        type: 2}
     - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
       propertyPath: movementSpeed

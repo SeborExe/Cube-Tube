@@ -32,4 +32,6 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("TubesAndLevels");
     }
+
+    public void Shop() => SceneManager.LoadScene("Shop");
 }
