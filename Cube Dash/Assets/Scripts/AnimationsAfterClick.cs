@@ -11,14 +11,13 @@ public class AnimationsAfterClick : MonoBehaviour
 
     public void ShowPrologueLevels()
     {
-        SelectLevels.GetComponent<Animator>().enabled = true;
-        Levels[0].GetComponent<Animator>().enabled = true;
-        //Debug.Log(PlayerPrefs.GetInt("Level2"));
+        SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevels");
+        Levels[0].GetComponent<Animator>().SetTrigger("prologue");
     }
 
     public void BackToLevels()
     {
-        SceneManager.LoadScene("TubesAndLevels");
-        WhiteScreen.SetActive(true);
+        Levels[0].GetComponent<Animator>().Play("PrologueLevelsBackBehindeScene");
+        SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevelsBackToScreen");
     }
 }
