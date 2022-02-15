@@ -7,7 +7,7 @@ public class Crystal : MonoBehaviour
     public bool Active = true;
     void Update()
     {
-        transform.rotation = Quaternion.Euler(45f, Time.timeSinceLevelLoad * 60f, 45f);
+        transform.rotation = Quaternion.Euler(-82f, -90f, Time.timeSinceLevelLoad * 60f);
     }
 
     private void OnTriggerEnter(Collider other)
