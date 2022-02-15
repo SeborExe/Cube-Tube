@@ -21,7 +21,9 @@ public class SpeedBlock : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        player.speed = 2500;
+        while (player.speed > 2500)
+            player.speed -= force;
+
         Debug.Log(player.speed);
     }
 }
