@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 1000f;
     public float movementSpeed = 500f;
+    float maxPosition = 6.45f;
 
     private float ScreenWidth;
 
-    public bool lockX, lockY, lockZ;
     private Vector3 startRotation;
     void Start()
     {
@@ -31,9 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
             rb.AddForce(-movementSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-
-        //if (rb.position.y < -1f)
-        //    FindObjectOfType<GameManager>().EndGame();
 
         #if UNITY_EDITOR
             RunCharacter(Input.GetAxis("Horizontal"));
@@ -59,13 +56,16 @@ public class PlayerMovement : MonoBehaviour
             i++;
         }
 
-        //Vector3 newRotation = transform.rotation.eulerAngles;
-        //transform.rotation = Quaternion.Euler(
-        //    lockX ? startRotation.x : newRotation.x,
-        //    lockY ? startRotation.y : newRotation.y,
-        //    lockZ ? startRotation.z : newRotation.z
-        //);
-    }
+        //if (transform.position.x >= maxPosition)
+        //{
+        //    transform.position = new Vector3(maxPosition, transform.position.y, transform.position.z);
+        //}
+
+        //if (transform.position.x <= -maxPosition)
+        //{
+        //    transform.position = new Vector3(-maxPosition, transform.position.y, transform.position.z);
+        //}
+    } 
 
     private void RunCharacter(float horizontalInput)
     {
