@@ -92,6 +92,7 @@ public class LevelComplete : MonoBehaviour
     {
         FindObjectOfType<GameManager>().completeLevelUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        CheckPointsStats.SetCurrentCheckPoint(0);
     }
 
     public void BackToMenu()

@@ -42,8 +42,8 @@ public class SelectTube : MonoBehaviour
 
     public void SelectLevel1()
     {
-            if (Padlocks[0].activeSelf == false)
-                SceneManager.LoadScene("Level1");
+        if (Padlocks[0].activeSelf == false)
+            SceneManager.LoadScene("Level1");
     }
 
     public void SelectLevel2()

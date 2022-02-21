@@ -12,7 +12,7 @@ public class AnimationsAfterClick : MonoBehaviour
     public void ShowPrologueLevels()
     {
         SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevels");
-        Levels[0].GetComponent<Animator>().SetTrigger("prologue");
+        Levels[0].GetComponent<Animator>().Play("PrologueLevels");
     }
 
     public void BackToLevels()
