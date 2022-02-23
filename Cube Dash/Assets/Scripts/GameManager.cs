@@ -32,6 +32,14 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         else
-            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
+        {
+            if (FindObjectOfType<StopBlock>() != null)
+            {
+                if (FindObjectOfType<StopBlock>().speed != 0)
+                    FindObjectOfType<StopBlock>().PlayerActive();
+            }
+
+            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint())); 
+        }
     }
 }

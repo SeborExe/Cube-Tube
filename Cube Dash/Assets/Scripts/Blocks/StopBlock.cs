@@ -5,13 +5,13 @@ using UnityEngine;
 public class StopBlock : MonoBehaviour
 {
     [Header("Definiowane dynamicznie")]
-    float speed;
+    public float speed;
     bool PlayerIsOnBlock = false;
     Vector3 TouchStart;
     bool MakingGesture = false;
 
     bool GestuleIsMade = false;
-    private float ScreenWidth;
+    private float ScreenHeight;
 
     void Update()
     {
@@ -21,8 +21,8 @@ public class StopBlock : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.L) || GestuleIsMade)
             {
-                FindObjectOfType<PlayerMovement>().speed = speed;
-                PlayerIsOnBlock = false;
+                PlayerActive();
+                StartCoroutine(ActiveColliderCoroutine());
             }
         } else
         {
@@ -80,8 +80,8 @@ public class StopBlock : MonoBehaviour
         //    Debug.Log("Giga czad!");
         //}
 
-        ScreenWidth = Screen.height;
-        if (Input.GetTouch(0).position.y > ScreenWidth / 1.75f)
+        ScreenHeight = Screen.height;
+        if (Input.GetTouch(0).position.y > ScreenHeight / 1.75f)
         {
             GestuleIsMade = true;
         }
@@ -96,5 +96,17 @@ public class StopBlock : MonoBehaviour
     {
         TouchStart = Vector3.zero;
         MakingGesture = false;
+    }
+
+    IEnumerator ActiveColliderCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        GetComponent<MeshCollider>().enabled = true;
+    }
+
+    public void PlayerActive()
+    {
+        FindObjectOfType<PlayerMovement>().speed = speed;
+        PlayerIsOnBlock = false;
     }
 }
