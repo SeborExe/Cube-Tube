@@ -61,5 +61,6 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        CheckPointsStats.SetCurrentCheckPoint(0);
     }
 }
