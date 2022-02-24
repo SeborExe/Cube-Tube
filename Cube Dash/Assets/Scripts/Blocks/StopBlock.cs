@@ -22,7 +22,6 @@ public class StopBlock : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.L) || GestuleIsMade)
             {
                 PlayerActive();
-                StartCoroutine(ActiveColliderCoroutine());
             }
         } else
         {
@@ -34,10 +33,10 @@ public class StopBlock : MonoBehaviour
     {
         if (collision.gameObject.name != "Player") return;
 
-        speed = collision.gameObject.GetComponent<PlayerMovement>().speed;
+        speed = collision.gameObject.GetComponent<PlayerMovement>().BasicSpeed;
 
         collision.gameObject.GetComponent<PlayerMovement>().speed = 0;
-        GetComponent<MeshCollider>().enabled = false;
+        //GetComponent<MeshCollider>().enabled = false;
         PlayerIsOnBlock = true;
     }
 
@@ -96,12 +95,6 @@ public class StopBlock : MonoBehaviour
     {
         TouchStart = Vector3.zero;
         MakingGesture = false;
-    }
-
-    IEnumerator ActiveColliderCoroutine()
-    {
-        yield return new WaitForSeconds(1f);
-        GetComponent<MeshCollider>().enabled = true;
     }
 
     public void PlayerActive()

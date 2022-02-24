@@ -33,13 +33,8 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            if (FindObjectOfType<StopBlock>() != null)
-            {
-                if (FindObjectOfType<StopBlock>().speed != 0)
-                    FindObjectOfType<StopBlock>().PlayerActive();
-            }
-
-            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint())); 
+            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
+            FindObjectOfType<PlayerMovement>().speed = FindObjectOfType<PlayerMovement>().BasicSpeed;
         }
     }
 }

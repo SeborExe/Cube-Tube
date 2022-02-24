@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     float maxPosition = 6.45f;
 
     private float ScreenWidth;
+    public float BasicSpeed;
 
     private Vector3 startRotation;
     void Start()
     {
         ScreenWidth = Screen.width;
         startRotation = transform.rotation.eulerAngles;
+        BasicSpeed = speed;
 
         GetComponent<MeshRenderer>().material = skinManager.GetSelectedSkin().material;
         StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
