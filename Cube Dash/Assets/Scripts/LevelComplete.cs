@@ -99,4 +99,9 @@ public class LevelComplete : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+
+    public void TubeComplete()
+    {
+        SceneManager.LoadScene("TubesAndLevels");
+    }
 }
