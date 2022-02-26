@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
         //Aktywowaæ now¹ stronê koñcow¹
         completeLevelUI.SetActive(true);
 
-        var money = FindObjectOfType<CrystalCounter>().ReachedCrystals() * 5 + (1000 / FindObjectOfType<InnerTimer>().time);
+        int levelNumber = SceneManager.GetActiveScene().buildIndex;
+        var money = FindObjectOfType<CrystalCounter>().ReachedCrystals() * 5 + ((1000 + (100 * levelNumber)) / FindObjectOfType<InnerTimer>().time);
         FindObjectOfType<LevelComplete>().MoneyText.text = "+" + money;
         PlayerPrefs.SetInt("money", money);
     }
