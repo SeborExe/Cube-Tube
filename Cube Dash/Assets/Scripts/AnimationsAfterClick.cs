@@ -15,9 +15,21 @@ public class AnimationsAfterClick : MonoBehaviour
         Levels[0].GetComponent<Animator>().Play("PrologueLevels");
     }
 
+    public void ShowWinterLevels()
+    {
+        SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevels");
+        Levels[1].GetComponent<Animator>().Play("PrologueLevels");
+    }
+
     public void BackToLevels()
     {
         Levels[0].GetComponent<Animator>().Play("PrologueLevelsBackBehindeScene");
+        SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevelsBackToScreen");
+    }
+
+    public void BackToLevelsFromWinterTube()
+    {
+        Levels[1].GetComponent<Animator>().Play("PrologueLevelsBackBehindeScene");
         SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevelsBackToScreen");
     }
 }

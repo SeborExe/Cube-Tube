@@ -27,9 +27,10 @@ public class SelectTube : MonoBehaviour
         }
 
         //Tubes
-        if (LevelStats.GetAllStars() == 8)
+        if (LevelStats.GetAllStars() >= 8)
         {
             ClosedTubes[0].SetActive(false);
+            Padlocks[6].SetActive(false);
         }
 
         //Required Stars
@@ -68,5 +69,35 @@ public class SelectTube : MonoBehaviour
     {
         if (Padlocks[4].activeSelf == false)
             SceneManager.LoadScene("Level5");
+    }
+
+    public void SelectLevel6()
+    {
+        if (Padlocks[5].activeSelf == false)
+            SceneManager.LoadScene("Level6");
+    }
+
+    public void SelectLevel7()
+    {
+        if (Padlocks[6].activeSelf == false)
+            SceneManager.LoadScene("Level7");
+    }
+
+    public void SelectLevel8()
+    {
+        if (Padlocks[7].activeSelf == false)
+            SceneManager.LoadScene("Level8");
+    }
+
+    public void SelectLevel9()
+    {
+        if (Padlocks[8].activeSelf == false)
+            SceneManager.LoadScene("Level9");
+    }
+
+    public void SelectLevel10()
+    {
+        if (Padlocks[9].activeSelf == false)
+            SceneManager.LoadScene("Level10");
     }
 }
