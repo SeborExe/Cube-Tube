@@ -1258,7 +1258,7 @@ MonoBehaviour:
   - {fileID: 430332445}
   - {fileID: 430332444}
   - {fileID: 430332443}
-  number: 2
+  number: 7
 --- !u!1 &445943955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3199895761282338027, guid: 7e8c2720067aea242934d4e7763e2526,
@@ -3663,7 +3663,7 @@ MonoBehaviour:
   - {fileID: 1256568171}
   - {fileID: 1256568170}
   - {fileID: 1256568169}
-  number: 1
+  number: 6
 --- !u!1 &1274617095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3199895761341163074, guid: 7e8c2720067aea242934d4e7763e2526,
@@ -3903,7 +3903,7 @@ MonoBehaviour:
   - {fileID: 1299831080}
   - {fileID: 1299831079}
   - {fileID: 1299831078}
-  number: 4
+  number: 9
 --- !u!1 &1328333247
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,7 +4747,7 @@ MonoBehaviour:
   - {fileID: 1557807407}
   - {fileID: 1557807406}
   - {fileID: 1557807405}
-  number: 3
+  number: 8
 --- !u!1001 &1576127542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4981,7 +4981,7 @@ MonoBehaviour:
   - {fileID: 1576127546}
   - {fileID: 1576127545}
   - {fileID: 1576127544}
-  number: 5
+  number: 10
 --- !u!1 &1612300385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3199895761282338027, guid: 7e8c2720067aea242934d4e7763e2526,
