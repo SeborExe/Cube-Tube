@@ -6,10 +6,12 @@ public class Cannon : MonoBehaviour
 {
     [Header("Definiowane w panelu inspekcyjnym")]
     public GameObject snowBallPrefab;
+    public GameObject SmogParticle;
     public float shootFrequency;
     public float shootPower;
     public Vector3 pos;
     public Vector3 prefabSize = Vector3.one * 3f;
+    public Vector3 particleStartPos;
 
     private float startTime;
     private Animator anim;
@@ -33,6 +35,9 @@ public class Cannon : MonoBehaviour
     public void ShootSnowBall()
     {
         var ball = Instantiate(snowBallPrefab);
+
+        Smog();
+
         ball.GetComponent<Transform>().localScale = prefabSize;
         ball.transform.SetParent(parent);
         ball.transform.position = transform.position + pos;
@@ -48,5 +53,12 @@ public class Cannon : MonoBehaviour
     {
         anim.SetBool("shoot", false);
         startTime = Time.time;
+    }
+
+    private void Smog()
+    {
+        var smog = Instantiate(SmogParticle);
+        smog.transform.SetParent(parent);
+        smog.transform.position = transform.position + particleStartPos;
     }
 }

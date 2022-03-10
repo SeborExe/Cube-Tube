@@ -141,3 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea2123697449ec48bc08151228327ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  snowParticle: {fileID: 8692257731210805998, guid: d1599ec1bce316843b3682bf0b58177d,
+    type: 3}
+  particleStartPos: {x: 0, y: 0, z: 0}
+  SnowPoofEffect: {fileID: 2550546346241261382, guid: 156fd9406be279045ab7917d42b38661,
+    type: 3}
