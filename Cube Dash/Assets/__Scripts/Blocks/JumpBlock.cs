@@ -11,6 +11,8 @@ public class JumpBlock : MonoBehaviour
     Rigidbody rb;
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Obstacle") return;
+
         rb = collision.gameObject.GetComponent<Rigidbody>();
         rb.AddForce(Vector3.up * jumpForce);
     }

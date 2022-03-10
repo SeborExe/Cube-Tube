@@ -27,7 +27,7 @@ public class SnowBall : MonoBehaviour
         var scale = trans.localScale;
         snowObj.transform.position = transform.position;
 
-        scale *= 0.9995f;
+        scale *= 0.999f;
         trans.localScale = scale;
 
         if (trans.localScale.x <= 0.2f)
