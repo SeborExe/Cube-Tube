@@ -8,21 +8,27 @@ public class BadSnowMan : MonoBehaviour
     public Transform[] target;
     public float speed;
     public float startRotY = -90f;
+    public float jumpForce = 300f;
 
     [Header("Definiowane dynamicznie")]
-    public Vector3 pos;
+    public Vector3 startPos;
     public Quaternion rot;
     int firstTime = 0;
     private int current;
     private bool rotate;
+    Rigidbody rb;
 
     private void Start()
     {
-        pos = transform.position;
+        rb = GetComponent<Rigidbody>();
+
+        startPos = transform.position;
         rotate = false;
 
         rot = Quaternion.Euler(0, startRotY, 0);
         transform.rotation = rot;
+
+        Jump();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,7 +69,13 @@ public class BadSnowMan : MonoBehaviour
     IEnumerator BasicPositionCoroutine()
     {
         yield return new WaitForSeconds(2f);
-        transform.position = pos;
+        transform.position = startPos;
         firstTime = 0;
+    }
+
+    private void Jump()
+    {
+        rb.AddForce(0, rb.mass * jumpForce, 0);
+        Invoke("Jump", 2f);
     }
 }
