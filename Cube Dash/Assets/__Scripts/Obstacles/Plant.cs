@@ -5,16 +5,17 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     Animator anim;
+    public float attackFrequency = 8f;
     void Start()
     {
         anim = GetComponent<Animator>();
-        Invoke("Attack", 8f);
+        Invoke("Attack", attackFrequency);
     }
 
     void Attack()
     {
         anim.SetTrigger("attack");
-        Invoke("Attack", 8f);
+        Invoke("Attack", attackFrequency);
     }
 
 }

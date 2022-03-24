@@ -10,6 +10,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         player = FindObjectOfType<PlayerMovement>();
-        scoreText.text = (player.transform.position.z / MapLength).ToString("0") + '%';
+        if (player != null)
+            scoreText.text = (player.transform.position.z / MapLength).ToString("0") + '%';
     }
 }

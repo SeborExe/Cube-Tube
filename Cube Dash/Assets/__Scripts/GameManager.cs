@@ -8,6 +8,16 @@ public class GameManager : MonoBehaviour
 
     public GameObject completeLevelUI;
 
+    private void Start()
+    {
+        if (CheckPointsStats.GetActualCheckPoint() != 0)
+        {
+            var pos = CheckPointsStats.GetActualCheckPoint();
+            var player = FindObjectOfType<PlayerMovement>();
+            player.transform.position = new Vector3(0, 2, pos);
+        }
+    }
+
     public void CompleteLevel()
     {
         //Aktywowaæ now¹ stronê koñcow¹
@@ -29,13 +39,13 @@ public class GameManager : MonoBehaviour
 
     void Respawn()
     {
-        if (CheckPointsStats.GetActualCheckPoint() == 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //if (CheckPointsStats.GetActualCheckPoint() == 0)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        else
-        {
-            StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
-            FindObjectOfType<PlayerMovement>().speed = FindObjectOfType<PlayerMovement>().BasicSpeed;
-        }
+        //else
+        //{
+        //    StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
+        //    FindObjectOfType<PlayerMovement>().speed = FindObjectOfType<PlayerMovement>().BasicSpeed;
+        //}
     }
 }

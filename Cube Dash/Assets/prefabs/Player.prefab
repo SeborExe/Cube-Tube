@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 113832413885130084}
   - component: {fileID: 113832413885130089}
   - component: {fileID: 113832413885130090}
+  - component: {fileID: 5176805742244727360}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,8 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 113832413885130084}
+  skinManager: {fileID: 0}
   speed: 6000
   movementSpeed: 75
+  BasicSpeed: 0
 --- !u!114 &113832413885130090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +147,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 113832413885130089}
+--- !u!114 &5176805742244727360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113832413885130083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8a4c880e3f54d42b26bbac4a912527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutCascades: 8
+  ExplodeForce: 25
