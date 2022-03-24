@@ -9,6 +9,7 @@ public class BadSnowMan : MonoBehaviour
     public float speed;
     public float startRotY = -90f;
     public float jumpForce = 300f;
+    public float rotSpeed = 1f;
 
     [Header("Definiowane dynamicznie")]
     public Vector3 startPos;
@@ -23,7 +24,6 @@ public class BadSnowMan : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         startPos = transform.position;
-        rotate = false;
 
         rot = Quaternion.Euler(0, startRotY, 0);
         transform.rotation = rot;
@@ -31,18 +31,11 @@ public class BadSnowMan : MonoBehaviour
         Jump();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (firstTime == 0)
-        {
-            StartCoroutine(BasicPositionCoroutine());
-            firstTime = 1;
-        }
-    }
-
     void FixedUpdate()
     {
-        if (transform.position != target[current].position)
+        rotate = GetComponentInChildren<BadSnowManTriggerRotate>().shouldRotate;
+
+        if (transform.position != target[current].position && !rotate)
         {
             Vector3 pos = Vector3.MoveTowards(transform.position, target[current].position, speed * Time.deltaTime);
             GetComponent<Rigidbody>().MovePosition(pos);
@@ -50,15 +43,14 @@ public class BadSnowMan : MonoBehaviour
 
         else
         {
-            rotate = true;
-
             if (rotate)
             {
-                transform.Rotate(0f, 90f * Time.deltaTime, 0f);
+                transform.Rotate(0f, 90f * Time.deltaTime * rotSpeed, 0f);
 
                 if (transform.rotation == Quaternion.Inverse(rot) || transform.rotation == Quaternion.Euler(0, startRotY + 360, 0) || transform.rotation == Quaternion.Euler(0, startRotY, 0))
                 {
                     rotate = false;
+                    GetComponentInChildren<BadSnowManTriggerRotate>().shouldRotate = false;
                     rot = transform.rotation;
                     current = (current + 1) % target.Length;
                 }
