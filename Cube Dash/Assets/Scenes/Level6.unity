@@ -1526,7 +1526,7 @@ PrefabInstance:
     - target: {fileID: 3525314952299672862, guid: 7f25c7298d7da774db46b4213ea9c8b9,
         type: 3}
       propertyPath: jumpForce
-      value: 1750
+      value: 1850
       objectReference: {fileID: 0}
     - target: {fileID: 3525314952299672863, guid: 7f25c7298d7da774db46b4213ea9c8b9,
         type: 3}
@@ -13393,7 +13393,7 @@ PrefabInstance:
     - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
       propertyPath: speed
-      value: 1350
+      value: 1250
       objectReference: {fileID: 0}
     - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
@@ -13404,7 +13404,7 @@ PrefabInstance:
     - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
       propertyPath: movementSpeed
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95107a5ae2863a24097a491db47ee29a, type: 3}
