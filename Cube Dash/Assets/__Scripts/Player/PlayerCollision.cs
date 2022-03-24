@@ -10,6 +10,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.collider.tag == "Obstacle")
         {
             movement.enabled = false;
+            GetComponent<PlayerDeadMeshDestroy>().DestroyMesh();
             FindObjectOfType<GameManager>().EndGame();
         }
     }

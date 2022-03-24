@@ -36,7 +36,6 @@ public class StopBlock : MonoBehaviour
         speed = collision.gameObject.GetComponent<PlayerMovement>().BasicSpeed;
 
         collision.gameObject.GetComponent<PlayerMovement>().speed = 0;
-        //GetComponent<MeshCollider>().enabled = false;
         PlayerIsOnBlock = true;
     }
 

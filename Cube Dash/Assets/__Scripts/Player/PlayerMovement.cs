@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed = 1000f;
     public float movementSpeed = 500f;
-    float maxPosition = 6.45f;
 
     private float ScreenWidth;
     public float BasicSpeed;
@@ -57,16 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
             i++;
         }
-
-        //if (transform.position.x >= maxPosition)
-        //{
-        //    transform.position = new Vector3(maxPosition, transform.position.y, transform.position.z);
-        //}
-
-        //if (transform.position.x <= -maxPosition)
-        //{
-        //    transform.position = new Vector3(-maxPosition, transform.position.y, transform.position.z);
-        //}
     } 
 
     private void RunCharacter(float horizontalInput)

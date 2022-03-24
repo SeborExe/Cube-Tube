@@ -98,6 +98,7 @@ public class LevelComplete : MonoBehaviour
     public void BackToMenu()
     {
         SceneManager.LoadScene("Menu");
+        CheckPointsStats.SetCurrentCheckPoint(0);
     }
 
     public void TubeComplete()

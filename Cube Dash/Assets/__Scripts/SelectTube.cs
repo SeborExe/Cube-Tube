@@ -41,6 +41,7 @@ public class SelectTube : MonoBehaviour
         }
     }
 
+    /*
     public void SelectLevel1()
     {
         if (Padlocks[0].activeSelf == false)
@@ -100,4 +101,5 @@ public class SelectTube : MonoBehaviour
         if (Padlocks[9].activeSelf == false)
             SceneManager.LoadScene("Level10");
     }
+    */
 }
