@@ -11,15 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     private float ScreenWidth;
     public float BasicSpeed;
+    public bool firstTime = true;
 
     private Vector3 startRotation;
-    void Start()
+    void Awake()
     {
         ScreenWidth = Screen.width;
-        startRotation = transform.rotation.eulerAngles;
-        BasicSpeed = speed;
 
-        GetComponent<MeshRenderer>().material = skinManager.GetSelectedSkin().material;
+        startRotation = transform.rotation.eulerAngles;
+
+        if (firstTime)
+            GameManager.S.SavePlayerSettings(skinManager.GetSelectedSkin().material, speed);
+
+        GameManager.S.InitialPlayer();
+
         StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
     }
 
@@ -56,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
             i++;
         }
-    } 
+    }
 
     private void RunCharacter(float horizontalInput)
     {

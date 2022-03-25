@@ -4215,28 +4215,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ec7d5fc2f181bc141ba70e239c75b00f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 969f141c7f0168b4a98e40628729f59d, type: 3}
---- !u!1 &560645068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
-    type: 3}
-  m_PrefabInstance: {fileID: 113832413731427216}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &560645069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 560645068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cea2d472143bdc42bea5eefad1d3d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Intensity: 1
-  Mass: 1
-  stiffness: 1
-  damping: 0.75
 --- !u!1001 &576981655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14301,11 +14279,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 113832413885130084, guid: 95107a5ae2863a24097a491db47ee29a,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 96
-      objectReference: {fileID: 0}
     - target: {fileID: 113832413885130088, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
       propertyPath: m_RootOrder
@@ -14391,11 +14364,6 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSpeed
       value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5176805742244727360, guid: 95107a5ae2863a24097a491db47ee29a,
-        type: 3}
-      propertyPath: ExplodeForce
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95107a5ae2863a24097a491db47ee29a, type: 3}
@@ -14660,6 +14628,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
+    - target: {fileID: 2739865589544657918, guid: b4cf7671e75c170459e15c3c11f14106,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4cf7671e75c170459e15c3c11f14106, type: 3}
 --- !u!222 &3085737434957717858
@@ -14754,6 +14728,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3171128534917966953, guid: b822445b35ba0e940b3c6ab752dc0285,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
+        type: 3}
     - target: {fileID: 3171128534917966953, guid: b822445b35ba0e940b3c6ab752dc0285,
         type: 3}
       propertyPath: restartDelay
