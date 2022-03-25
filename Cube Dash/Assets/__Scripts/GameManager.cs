@@ -9,13 +9,9 @@ public class GameManager : MonoBehaviour
     public bool gameHasEnded = false;
     public float restartDelay = 2f;
 
-    public GameObject playerPrefab;
     private float checkpoint;
 
     public GameObject completeLevelUI;
-
-    private Material playerMat;
-    private float playerSpeed;
 
     private void Awake()
     {
@@ -50,44 +46,7 @@ public class GameManager : MonoBehaviour
         else
         {
             checkpoint = CheckPointsStats.GetActualCheckPoint();
-            CheckPoint(checkpoint);
+            SpawnManager.S.CheckPoint(checkpoint);
         }
-    }
-
-    private void CheckPoint(float pos)
-    {
-        foreach (var gameObj in FindObjectsOfType(typeof(GameObject)) as GameObject[])
-        {
-            if (gameObj.name == "Player")
-            {
-                Destroy(gameObj);
-            }
-        }
-
-        if (FindObjectOfType<PlayerMovement>() == null)
-        {
-            var player = Instantiate(playerPrefab, new Vector3(0, 2, pos), Quaternion.Euler(0, 0, 0));
-            player.GetComponent<PlayerDeadMeshDestroy>().enabled = false;
-            InitialPlayer();
-            FindObjectOfType<Camera>().FindPlayer();
-
-            player.GetComponent<PlayerDeadMeshDestroy>().enabled = true;
-            FindObjectOfType<GameManager>().gameHasEnded = false;
-        }
-    }
-
-    public void SavePlayerSettings(Material material, float speed)
-    {
-        playerMat = material;
-        playerSpeed = speed;
-        FindObjectOfType<PlayerMovement>().firstTime = false;
-    }
-
-    public void InitialPlayer()
-    {
-        var player = FindObjectOfType<PlayerMovement>();
-        player.speed = playerSpeed;
-
-        player.GetComponent<MeshRenderer>().material = playerMat;
     }
 }

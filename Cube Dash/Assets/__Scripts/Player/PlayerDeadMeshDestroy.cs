@@ -251,7 +251,7 @@ public class PlayerDeadMeshDestroy : MonoBehaviour
 
         public void MakeGameobject(PlayerDeadMeshDestroy original)
         {
-            GameObject = new GameObject(original.name);
+            GameObject = new GameObject("corps");
             GameObject.transform.position = original.transform.position;
             GameObject.transform.rotation = original.transform.rotation;
             GameObject.transform.localScale = original.transform.localScale;

@@ -12,7 +12,7 @@ public class Crystal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name != "Player" || !Active) return;
+        if (other.tag != "Player" || !Active) return;
 
         var renderer = GetComponent<Renderer>();
         renderer.enabled = false;

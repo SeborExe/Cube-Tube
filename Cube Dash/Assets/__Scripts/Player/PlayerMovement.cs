@@ -14,16 +14,17 @@ public class PlayerMovement : MonoBehaviour
     public bool firstTime = true;
 
     private Vector3 startRotation;
-    void Awake()
+    void Start()
     {
         ScreenWidth = Screen.width;
 
         startRotation = transform.rotation.eulerAngles;
+        BasicSpeed = speed;
 
-        if (firstTime)
-            GameManager.S.SavePlayerSettings(skinManager.GetSelectedSkin().material, speed);
+        if (FindObjectOfType<PlayerMovement>() != null || SpawnManager.S != null)
+            SpawnManager.S.SavePlayerSettings(skinManager.GetSelectedSkin().material, speed);
 
-        GameManager.S.InitialPlayer();
+        SpawnManager.S.InitialPlayer();
 
         StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
     }
