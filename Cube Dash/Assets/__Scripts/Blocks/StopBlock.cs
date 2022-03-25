@@ -31,7 +31,7 @@ public class StopBlock : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name != "Player") return;
+        if (collision.gameObject.tag != "Player") return;
 
         speed = collision.gameObject.GetComponent<PlayerMovement>().BasicSpeed;
 

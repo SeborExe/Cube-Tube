@@ -11,15 +11,21 @@ public class PlayerMovement : MonoBehaviour
 
     private float ScreenWidth;
     public float BasicSpeed;
+    public bool firstTime = true;
 
     private Vector3 startRotation;
     void Start()
     {
         ScreenWidth = Screen.width;
+
         startRotation = transform.rotation.eulerAngles;
         BasicSpeed = speed;
 
-        GetComponent<MeshRenderer>().material = skinManager.GetSelectedSkin().material;
+        if (FindObjectOfType<PlayerMovement>() != null || SpawnManager.S != null)
+            SpawnManager.S.SavePlayerSettings(skinManager.GetSelectedSkin().material, speed);
+
+        SpawnManager.S.InitialPlayer();
+
         StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
     }
 
@@ -56,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
             i++;
         }
-    } 
+    }
 
     private void RunCharacter(float horizontalInput)
     {

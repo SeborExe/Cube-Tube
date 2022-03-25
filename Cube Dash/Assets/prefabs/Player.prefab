@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 113832413885130089}
   - component: {fileID: 113832413885130090}
   - component: {fileID: 5176805742244727360}
+  - component: {fileID: 5562046828491621485}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +116,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 0
 --- !u!114 &113832413885130089
 MonoBehaviour:
@@ -132,7 +133,7 @@ MonoBehaviour:
   rb: {fileID: 113832413885130084}
   skinManager: {fileID: 0}
   speed: 6000
-  movementSpeed: 75
+  movementSpeed: 15
   BasicSpeed: 0
 --- !u!114 &113832413885130090
 MonoBehaviour:
@@ -160,4 +161,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CutCascades: 8
-  ExplodeForce: 25
+  ExplodeForce: 10
+--- !u!114 &5562046828491621485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113832413885130083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cea2d472143bdc42bea5eefad1d3d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Intensity: 1
+  Mass: 1
+  stiffness: 1
+  damping: 0.75

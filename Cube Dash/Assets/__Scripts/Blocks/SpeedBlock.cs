@@ -13,6 +13,8 @@ public class SpeedBlock : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        if (collision.gameObject.tag != "Player") return;
+
         player = collision.gameObject.GetComponent<PlayerMovement>();
         player.speed += force;
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;

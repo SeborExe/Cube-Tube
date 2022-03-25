@@ -1,21 +1,22 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager S;
+
     public bool gameHasEnded = false;
     public float restartDelay = 2f;
 
+    private float checkpoint;
+
     public GameObject completeLevelUI;
 
-    private void Start()
+    private void Awake()
     {
-        if (CheckPointsStats.GetActualCheckPoint() != 0)
-        {
-            var pos = CheckPointsStats.GetActualCheckPoint();
-            var player = FindObjectOfType<PlayerMovement>();
-            player.transform.position = new Vector3(0, 2, pos);
-        }
+        S = this;
+        
     }
 
     public void CompleteLevel()
@@ -39,13 +40,13 @@ public class GameManager : MonoBehaviour
 
     void Respawn()
     {
-        //if (CheckPointsStats.GetActualCheckPoint() == 0)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (CheckPointsStats.GetActualCheckPoint() == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        //else
-        //{
-        //    StartCoroutine(FindObjectOfType<CheckPoint>().CheckPointCoroutine(CheckPointsStats.GetActualCheckPoint()));
-        //    FindObjectOfType<PlayerMovement>().speed = FindObjectOfType<PlayerMovement>().BasicSpeed;
-        //}
+        else
+        {
+            checkpoint = CheckPointsStats.GetActualCheckPoint();
+            SpawnManager.S.CheckPoint(checkpoint);
+        }
     }
 }
