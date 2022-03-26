@@ -2161,7 +2161,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3171128535178687788}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105776113}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 441c5843374b9e848ae107af165c3189, type: 3}
@@ -13677,53 +13677,6 @@ Transform:
   m_Father: {fileID: 1424598700}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2105776113 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3171128534917966952, guid: b822445b35ba0e940b3c6ab752dc0285,
-    type: 3}
-  m_PrefabInstance: {fileID: 3171128535178687788}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2105776115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105776113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f1c02e78e4db043931fe66f138a92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CrystalCounterText: {fileID: 3085737434957717869}
---- !u!114 &2105776116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105776113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b451c3e794419234f9d6a533bb40f4e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  gameIsAcive: 1
---- !u!114 &2105776118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105776113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e68336fe016365b4385888356118c7af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
-    type: 3}
 --- !u!1001 &2107864469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14741,17 +14694,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3171128534917966953, guid: b822445b35ba0e940b3c6ab752dc0285,
         type: 3}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
-        type: 3}
-    - target: {fileID: 3171128534917966953, guid: b822445b35ba0e940b3c6ab752dc0285,
-        type: 3}
-      propertyPath: restartDelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3171128534917966953, guid: b822445b35ba0e940b3c6ab752dc0285,
-        type: 3}
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 899602059}
@@ -14810,7 +14752,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3446220287542056769, guid: b822445b35ba0e940b3c6ab752dc0285,
+        type: 3}
+      propertyPath: CrystalCounterText
+      value: 
+      objectReference: {fileID: 3085737434957717869}
+    m_RemovedComponents:
+    - {fileID: 2105776116, guid: b822445b35ba0e940b3c6ab752dc0285, type: 3}
+    - {fileID: 2105776115, guid: b822445b35ba0e940b3c6ab752dc0285, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b822445b35ba0e940b3c6ab752dc0285, type: 3}
 --- !u!1001 &3279481881182175003
 PrefabInstance:

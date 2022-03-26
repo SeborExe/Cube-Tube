@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         var money = FindObjectOfType<CrystalCounter>().ReachedCrystals() * 5 + ((1000 + (100 * levelNumber)) / FindObjectOfType<InnerTimer>().time);
         FindObjectOfType<LevelComplete>().MoneyText.text = "+" + money;
         PlayerPrefs.SetInt("money", money);
+
+        if (LevelStats.GetHighestLevel() < (levelNumber + 1))
+        {
+            LevelStats.SetHighestLevel((levelNumber + 1));
+        }
     }
     public void EndGame()
     {

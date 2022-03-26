@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
         startRotation = transform.rotation.eulerAngles;
         BasicSpeed = speed;
 
-        if (FindObjectOfType<PlayerMovement>() != null || SpawnManager.S != null)
+        if (GetComponent<PlayerMovement>() != null || SpawnManager.S != null && firstTime)
             SpawnManager.S.SavePlayerSettings(skinManager.GetSelectedSkin().material, speed);
 
         SpawnManager.S.InitialPlayer();
