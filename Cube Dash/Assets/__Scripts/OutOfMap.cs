@@ -6,7 +6,7 @@ public class OutOfMap : MonoBehaviour
 {
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<PlayerMovement>())
+        if (other.gameObject.tag == "Player")
         {
             FindObjectOfType<GameManager>().restartDelay = 0;
             FindObjectOfType<GameManager>().EndGame();
