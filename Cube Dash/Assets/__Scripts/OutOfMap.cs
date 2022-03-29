@@ -6,10 +6,10 @@ public class OutOfMap : MonoBehaviour
 {
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.name == "Player" || other.gameObject.tag == "Player")
         {
-            FindObjectOfType<GameManager>().restartDelay = 0;
-            FindObjectOfType<GameManager>().EndGame();
+            GameManager.S.restartDelay = 0;
+            GameManager.S.OutOfMapEndGame();
         }
     }
 }

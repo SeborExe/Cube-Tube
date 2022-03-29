@@ -6,24 +6,27 @@ public class SpeedBlock : MonoBehaviour
 {
     [Header("Definiowane w inspektorze")]
     public float force = 2f;
-    public float distance = 1f;
+    public float maxSpeed = 2000f;
 
     [Header("Definiowane dynamicznie")]
     PlayerMovement player;
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag != "Player") return;
 
         player = collision.gameObject.GetComponent<PlayerMovement>();
-        player.speed += force;
+
+        while (player.speed < maxSpeed)
+            player.speed += force;
+
         player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
         Debug.Log(player.speed);
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        while (player.speed > 2500)
+        while (player.speed > player.BasicSpeed)
             player.speed -= force;
 
         Debug.Log(player.speed);

@@ -11,7 +11,7 @@ public class PlayerCollision : MonoBehaviour
         {
             movement.enabled = false;
             GetComponent<PlayerDeadMeshDestroy>().DestroyMesh();
-            FindObjectOfType<GameManager>().EndGame();
+            GameManager.S.EndGame();
         }
     }
 }

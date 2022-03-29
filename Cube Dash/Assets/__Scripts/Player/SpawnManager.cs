@@ -39,6 +39,23 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    public IEnumerator CheckPointCoroutine(float pos)
+    {
+        var player = FindObjectOfType<PlayerMovement>();
+
+        player.enabled = false;
+        yield return new WaitForEndOfFrame();
+
+        player.transform.position = new Vector3(0, 2, pos);
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        player.speed = playerSpeed;
+
+        yield return new WaitForEndOfFrame();
+        player.enabled = true;
+        GameManager.S.gameHasEnded = false;
+        GameManager.S.restartDelay = 2f;
+    }
+
     public void SavePlayerSettings(Material material, float speed)
     {
         playerMat = material;
