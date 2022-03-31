@@ -12,7 +12,16 @@ public class Menu : MonoBehaviour
     GameObject OptionsPanel;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int highestLevel = LevelStats.GetHighestLevel();
+
+        Debug.Log(highestLevel);
+
+        if (highestLevel == 0)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        else
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + highestLevel);
+
         CheckPointsStats.SetCurrentCheckPoint(0);
     }
 

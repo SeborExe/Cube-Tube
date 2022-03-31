@@ -47,7 +47,7 @@ public class BadSnowMan : MonoBehaviour
             {
                 transform.Rotate(0f, 90f * Time.deltaTime * rotSpeed, 0f);
 
-                if (transform.rotation == Quaternion.Inverse(rot) || transform.rotation == Quaternion.Euler(0, startRotY + 360, 0) || transform.rotation == Quaternion.Euler(0, startRotY, 0))
+                if (transform.rotation == Quaternion.Inverse(rot) || transform.rotation == Quaternion.Euler(0, startRotY + 360, 0) || transform.rotation == Quaternion.Euler(0, startRotY, 0) || transform.rotation == Quaternion.Euler(0, startRotY + 180, 0) || transform.rotation == Quaternion.Euler(0, startRotY - 180, 0))
                 {
                     rotate = false;
                     GetComponentInChildren<BadSnowManTriggerRotate>().shouldRotate = false;

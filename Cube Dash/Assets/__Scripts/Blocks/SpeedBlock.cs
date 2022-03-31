@@ -5,27 +5,48 @@ using UnityEngine;
 public class SpeedBlock : MonoBehaviour
 {
     [Header("Definiowane w inspektorze")]
-    public float force = 2f;
-    public float distance = 1f;
+    public float maxSpeed = 2000f;
+    public float acceleration = 200f;
+    public float slowingDown = 250f;
 
     [Header("Definiowane dynamicznie")]
     PlayerMovement player;
 
-    private void OnCollisionStay(Collision collision)
+    private bool stopBlockIsActive = false;
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag != "Player") return;
 
         player = collision.gameObject.GetComponent<PlayerMovement>();
-        player.speed += force;
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
-        Debug.Log(player.speed);
+        stopBlockIsActive = true;
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collision)
     {
-        while (player.speed > 2500)
-            player.speed -= force;
+        if (collision.gameObject.tag != "Player") return;
 
-        Debug.Log(player.speed);
+        player = collision.gameObject.GetComponent<PlayerMovement>();
+        stopBlockIsActive = false;
+    }
+
+    private void Update()
+    {
+        if (stopBlockIsActive)
+        {
+            if (player != null)
+            {
+                if (player.speed < maxSpeed)
+                    player.speed += Time.deltaTime * acceleration;
+            }
+        }
+        else if (!stopBlockIsActive)
+        {
+            if (player != null)
+            {
+                if (player.speed > player.BasicSpeed)
+                    player.speed -= Time.deltaTime * slowingDown;
+            }
+        }
     }
 }

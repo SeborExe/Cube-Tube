@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         S = this;
-        
     }
 
     public void CompleteLevel()
@@ -28,6 +27,11 @@ public class GameManager : MonoBehaviour
         var money = FindObjectOfType<CrystalCounter>().ReachedCrystals() * 5 + ((1000 + (100 * levelNumber)) / FindObjectOfType<InnerTimer>().time);
         FindObjectOfType<LevelComplete>().MoneyText.text = "+" + money;
         PlayerPrefs.SetInt("money", money);
+
+        if (LevelStats.GetHighestLevel() < (levelNumber + 1))
+        {
+            LevelStats.SetHighestLevel((levelNumber + 1));
+        }
     }
     public void EndGame()
     {
@@ -38,15 +42,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void OutOfMapEndGame()
+    {
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Invoke("OutOfMapRespawn", restartDelay);
+        }
+    }
+
     void Respawn()
     {
         if (CheckPointsStats.GetActualCheckPoint() == 0)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
         else
         {
             checkpoint = CheckPointsStats.GetActualCheckPoint();
             SpawnManager.S.CheckPoint(checkpoint);
         }
+    }
+
+    void OutOfMapRespawn()
+    {
+        checkpoint = CheckPointsStats.GetActualCheckPoint();
+        StartCoroutine(SpawnManager.S.CheckPointCoroutine(checkpoint));
     }
 }
