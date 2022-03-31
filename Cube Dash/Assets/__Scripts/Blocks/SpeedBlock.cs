@@ -6,20 +6,20 @@ public class SpeedBlock : MonoBehaviour
 {
     [Header("Definiowane w inspektorze")]
     public float maxSpeed = 2000f;
-    public float timeToMaxSpeed = 10f;
-    public float timeToMinSpeed = 5f;
+    public float acceleration = 200f;
+    public float slowingDown = 250f;
 
     [Header("Definiowane dynamicznie")]
     PlayerMovement player;
+
+    private bool stopBlockIsActive = false;
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag != "Player") return;
 
         player = collision.gameObject.GetComponent<PlayerMovement>();
-        player.speed = Mathf.Lerp(player.speed, maxSpeed, timeToMaxSpeed);
-
-        player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+        stopBlockIsActive = true;
     }
 
     private void OnTriggerExit(Collider collision)
@@ -27,6 +27,26 @@ public class SpeedBlock : MonoBehaviour
         if (collision.gameObject.tag != "Player") return;
 
         player = collision.gameObject.GetComponent<PlayerMovement>();
-        player.speed = Mathf.Lerp(player.speed, player.BasicSpeed, timeToMinSpeed);
+        stopBlockIsActive = false;
+    }
+
+    private void Update()
+    {
+        if (stopBlockIsActive)
+        {
+            if (player != null)
+            {
+                if (player.speed < maxSpeed)
+                    player.speed += Time.deltaTime * acceleration;
+            }
+        }
+        else if (!stopBlockIsActive)
+        {
+            if (player != null)
+            {
+                if (player.speed > player.BasicSpeed)
+                    player.speed -= Time.deltaTime * slowingDown;
+            }
+        }
     }
 }
