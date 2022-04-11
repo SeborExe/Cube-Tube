@@ -1,72 +1,42 @@
 {
     "m_SelectedDeviceId": "5200bfd6f0d16553",
     "m_SelectedPackage": {
-        "deviceId": "5200bfd6f0d16553",
-        "name": "com.SgameS.CubeTube",
-        "processId": 21947,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "5200bfd6f0d16553",
-            "name": "com.sec.android.app.launcher",
-            "processId": 4171,
-            "exited": true
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.DefaultCompany.CubeDash",
-            "processId": 28396,
-            "exited": true
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.DefaultCompany.CubeDash",
-            "processId": 29392,
-            "exited": true
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.SgameS.CubeTube",
-            "processId": 3176,
-            "exited": false
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.SgameS.CubeTube",
-            "processId": 30152,
-            "exited": false
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.SgameS.CubeTube",
-            "processId": 744,
-            "exited": false
-        },
-        {
-            "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
             "processId": 4500,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
             "processId": 8074,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
             "processId": 9971,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
             "processId": 21947,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 11748,
+            "exited": true
         }
     ],
     "m_Tags": {
