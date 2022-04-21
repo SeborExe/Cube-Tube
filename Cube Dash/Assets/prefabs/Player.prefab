@@ -135,6 +135,7 @@ MonoBehaviour:
   speed: 6000
   movementSpeed: 15
   BasicSpeed: 0
+  firstTime: 1
 --- !u!114 &113832413885130090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8a4c880e3f54d42b26bbac4a912527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutCascades: 8
+  CutCascades: 6
   ExplodeForce: 10
 --- !u!114 &5562046828491621485
 MonoBehaviour:

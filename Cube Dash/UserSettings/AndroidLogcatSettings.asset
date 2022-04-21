@@ -1,19 +1,13 @@
 {
     "m_SelectedDeviceId": "5200bfd6f0d16553",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "5200bfd6f0d16553",
+        "name": "com.SgameS.CubeTube",
+        "processId": 6785,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "5200bfd6f0d16553",
-            "name": "com.SgameS.CubeTube",
-            "processId": 4500,
-            "exited": true
-        },
         {
             "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
@@ -37,6 +31,18 @@
             "name": "com.SgameS.CubeTube",
             "processId": 11748,
             "exited": true
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 858,
+            "exited": true
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 6785,
+            "exited": false
         }
     ],
     "m_Tags": {
