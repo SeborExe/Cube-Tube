@@ -6,15 +6,15 @@ using UnityEngine;
 public class Music : MonoBehaviour
 {
     public AudioClip[] clips;
-    private AudioSource audioSource;
+    AudioSource audioSource;
     void Start()
     {
-        FindObjectOfType<Music>().GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("musicVolume", 0.8f);
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("musicVolume", 0.8f);
 
         if (FindObjectsOfType<Music>().Length > 1)
             Destroy(gameObject);
 
-        audioSource = FindObjectOfType<AudioSource>();
         audioSource.loop = false;
     }
 

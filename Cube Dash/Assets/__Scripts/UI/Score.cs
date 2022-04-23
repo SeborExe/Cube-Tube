@@ -7,9 +7,14 @@ public class Score : MonoBehaviour
     public Text scoreText;
 
     public int MapLength = 5;
-    void Update()
+
+    private void OnEnable()
     {
         player = FindObjectOfType<PlayerMovement>();
+    }
+
+    void Update()
+    {
         if (player != null)
             scoreText.text = (player.transform.position.z / MapLength).ToString("0") + '%';
     }

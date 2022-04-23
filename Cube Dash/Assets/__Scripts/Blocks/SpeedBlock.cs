@@ -32,6 +32,11 @@ public class SpeedBlock : MonoBehaviour
 
     private void Update()
     {
+        ActivateBlock();
+    }
+
+    private void ActivateBlock()
+    {
         if (stopBlockIsActive)
         {
             if (player != null)

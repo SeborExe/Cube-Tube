@@ -15,6 +15,7 @@ public class SnowBall : MonoBehaviour
     [Header("Definiowane dynamicznie")]
     private Transform trans;
     private GameObject snowObj;
+
     void Start()
     {
         trans = GetComponent<Transform>();

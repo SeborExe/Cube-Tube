@@ -2883,7 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.6392157}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6487,6 +6487,7 @@ MonoBehaviour:
   - {fileID: 993864174}
   - {fileID: 59703979}
   MoneyText: {fileID: 1527674183}
+  gameManager: {fileID: 277731653}
 --- !u!1 &922015467
 GameObject:
   m_ObjectHideFlags: 0
@@ -10673,7 +10674,7 @@ PrefabInstance:
     - target: {fileID: 6334953091980810771, guid: 21262e5501d82cb4d915ab639f3a5cfe,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8945987643391597141, guid: 21262e5501d82cb4d915ab639f3a5cfe,
         type: 3}
@@ -18848,6 +18849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
         type: 3}
+      propertyPath: innerTimer
+      value: 
+      objectReference: {fileID: 2105776116}
+    - target: {fileID: 113832413885130089, guid: 95107a5ae2863a24097a491db47ee29a,
+        type: 3}
       propertyPath: skinManager
       value: 
       objectReference: {fileID: 11400000, guid: 2a3bbd742afe0ad4fbcf2bdf07d48f5b,
@@ -19062,6 +19068,12 @@ PrefabInstance:
       objectReference: {fileID: 435123960}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622ae91d3c5098e4db4641dba4039363, type: 3}
+--- !u!20 &1406569804773234521 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1406569803814386219, guid: 622ae91d3c5098e4db4641dba4039363,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406569804773234520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2268169146602187063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19307,6 +19319,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2105776118, guid: b822445b35ba0e940b3c6ab752dc0285, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1406569804773234521}
     - target: {fileID: 3171128534917966952, guid: b822445b35ba0e940b3c6ab752dc0285,
         type: 3}
       propertyPath: m_Name

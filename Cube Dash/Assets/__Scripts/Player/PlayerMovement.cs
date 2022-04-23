@@ -4,7 +4,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    [SerializeField] private SkinManager skinManager;
+    [SerializeField] SkinManager skinManager;
+    [SerializeField] InnerTimer innerTimer;
 
     public float speed = 1000f;
     public float movementSpeed = 500f;
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         SpawnManager.S.InitialPlayer();
 
-        StartCoroutine(FindObjectOfType<InnerTimer>().TimerCoroutine());
+        StartCoroutine(innerTimer.TimerCoroutine());
     }
 
     void FixedUpdate()
@@ -46,11 +47,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        TouchScreenMovement();
+    }
+
+    private void TouchScreenMovement()
+    {
         int i = 0;
 
-        while (i <Input.touchCount)
+        while (i < Input.touchCount)
         {
-            if (Input.GetTouch (i).position.x > ScreenWidth / 2)
+            if (Input.GetTouch(i).position.x > ScreenWidth / 2)
             {
                 RunCharacter(1f);
             }

@@ -10,6 +10,9 @@ public class LevelComplete : MonoBehaviour
     CrystalCounter crystalCounter;
     public GameObject[] Stars;
     public Text MoneyText;
+
+    [SerializeField] GameManager gameManager;
+
     public void LoadNextLevel()
     {
         crystalCounter = FindObjectOfType<CrystalCounter>();
@@ -90,7 +93,7 @@ public class LevelComplete : MonoBehaviour
 
     public void PlayNextLevel()
     {
-        FindObjectOfType<GameManager>().completeLevelUI.SetActive(false);
+        gameManager.completeLevelUI.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         CheckPointsStats.SetCurrentCheckPoint(0);
     }

@@ -28,9 +28,7 @@ public class Pause : MonoBehaviour
         for (int i = 3; i > 0; i--)
         {
             CounterText.GetComponent<Text>().text = i.ToString();
-
-            for (int j = 0; j < 25; j++)
-                yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1f);
         }
 
         pauseBG.SetActive(true);

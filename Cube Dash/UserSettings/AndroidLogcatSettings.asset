@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5200bfd6f0d16553",
         "name": "com.SgameS.CubeTube",
-        "processId": 6785,
+        "processId": 24296,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -42,6 +42,30 @@
             "deviceId": "5200bfd6f0d16553",
             "name": "com.SgameS.CubeTube",
             "processId": 6785,
+            "exited": false
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 14301,
+            "exited": false
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 21821,
+            "exited": false
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 22729,
+            "exited": false
+        },
+        {
+            "deviceId": "5200bfd6f0d16553",
+            "name": "com.SgameS.CubeTube",
+            "processId": 24296,
             "exited": false
         }
     ],

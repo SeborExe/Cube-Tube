@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private Transform player;
+    [SerializeField] Transform player;
     public Vector3 offset;
 
-    private void Awake()
-    {
-        player = GameObject.Find("Player").transform;
-    }
     void Update()
     {
         if (player != null)

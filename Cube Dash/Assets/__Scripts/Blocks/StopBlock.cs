@@ -6,7 +6,7 @@ public class StopBlock : MonoBehaviour
 {
     [Header("Definiowane dynamicznie")]
     public float speed;
-    bool PlayerIsOnBlock = false;
+    public bool PlayerIsOnBlock = false;
     Vector3 TouchStart;
     bool MakingGesture = false;
 

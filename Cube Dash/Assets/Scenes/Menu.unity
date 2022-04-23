@@ -3269,6 +3269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeSlider: {fileID: 1979375248}
+  music: {fileID: 215502829}
 --- !u!1 &2065807352
 GameObject:
   m_ObjectHideFlags: 0
