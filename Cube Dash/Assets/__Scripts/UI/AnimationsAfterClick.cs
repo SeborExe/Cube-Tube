@@ -17,8 +17,11 @@ public class AnimationsAfterClick : MonoBehaviour
 
     public void ShowWinterLevels()
     {
-        SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevels");
-        Levels[1].GetComponent<Animator>().Play("PrologueLevels");
+        if (LevelStats.GetAllStars() >= 8)
+        {
+            SelectLevels.GetComponent<Animator>().Play("PrologueTubeLevels");
+            Levels[1].GetComponent<Animator>().Play("PrologueLevels");
+        }
     }
 
     public void BackToLevels()

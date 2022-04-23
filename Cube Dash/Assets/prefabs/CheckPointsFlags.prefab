@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1829485349379424417
 Transform:
@@ -115,6 +115,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: CheckPointFlafL
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30a521da9c9d73d43af5b543489a9ca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607668393258877731, guid: 30a521da9c9d73d43af5b543489a9ca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a521da9c9d73d43af5b543489a9ca7, type: 3}
 --- !u!4 &176740500982326727 stripped
@@ -204,6 +214,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CheckPointFlafR
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30a521da9c9d73d43af5b543489a9ca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607668393258877731, guid: 30a521da9c9d73d43af5b543489a9ca7,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a521da9c9d73d43af5b543489a9ca7, type: 3}

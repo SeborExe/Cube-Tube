@@ -6,16 +6,15 @@ using UnityEngine.SceneManagement;
 public class SelectLevel : MonoBehaviour
 {
     private new string name;
-    private Transform padlock;
+    public Transform padlock;
     private void Start()
     {   
         name = gameObject.name;
-        padlock = gameObject.transform.Find("Padlock");
     }
 
     public void SelectThisLevel()
     {
-        if (padlock == null)
+        if (padlock.gameObject.activeSelf == false)
         {
             CheckPointsStats.SetCurrentCheckPoint(0);
             SceneManager.LoadScene(name);
