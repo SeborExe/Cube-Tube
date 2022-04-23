@@ -8,6 +8,11 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject playerPrefab;
 
+    Camera camera;
+    [SerializeField] GameManager gameManager;
+
+    PlayerMovement playerMovement;
+
     private Material playerMat;
     private float playerSpeed;
 
@@ -15,6 +20,12 @@ public class SpawnManager : MonoBehaviour
     {
         S = this;
 
+    }
+
+    private void Start()
+    {
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        camera = FindObjectOfType<Camera>();
     }
 
     public void CheckPoint(float pos)
@@ -27,15 +38,15 @@ public class SpawnManager : MonoBehaviour
             }
         }
 
-        if (FindObjectOfType<PlayerMovement>() == null)
+        if (playerMovement == null)
         {
             var player = Instantiate(playerPrefab, new Vector3(0, 2, pos), Quaternion.Euler(0, 0, 0));
             player.GetComponent<PlayerDeadMeshDestroy>().enabled = false;
             InitialPlayer();
-            FindObjectOfType<Camera>().FindPlayer();
+            camera.FindPlayer();
 
             player.GetComponent<PlayerDeadMeshDestroy>().enabled = true;
-            FindObjectOfType<GameManager>().gameHasEnded = false;
+            gameManager.gameHasEnded = false;
         }
     }
 
@@ -60,7 +71,7 @@ public class SpawnManager : MonoBehaviour
     {
         playerMat = material;
         playerSpeed = speed;
-        FindObjectOfType<PlayerMovement>().firstTime = false;
+        playerMovement.firstTime = false;
     }
 
     public void InitialPlayer()

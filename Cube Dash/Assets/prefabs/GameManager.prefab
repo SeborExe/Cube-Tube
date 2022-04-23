@@ -12,8 +12,6 @@ GameObject:
   - component: {fileID: 3171128534917966953}
   - component: {fileID: 2105776115}
   - component: {fileID: 2105776116}
-  - component: {fileID: 3446220287542056769}
-  - component: {fileID: 938299308722639299}
   - component: {fileID: 2105776118}
   m_Layer: 0
   m_Name: GameManager
@@ -79,33 +77,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   gameIsAcive: 1
---- !u!114 &3446220287542056769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171128534917966952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48f1c02e78e4db043931fe66f138a92a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CrystalCounterText: {fileID: 0}
---- !u!114 &938299308722639299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171128534917966952}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b451c3e794419234f9d6a533bb40f4e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  time: 0
-  gameIsAcive: 1
 --- !u!114 &2105776118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,3 +91,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 113832413885130083, guid: 95107a5ae2863a24097a491db47ee29a,
     type: 3}
+  camera: {fileID: 0}
+  gameManager: {fileID: 3171128534917966953}

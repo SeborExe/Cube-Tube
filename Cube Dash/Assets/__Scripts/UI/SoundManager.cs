@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
     [SerializeField] Slider volumeSlider;
+    [SerializeField] Music music;
     void Start()
     {
         if (!PlayerPrefs.HasKey("musicVolume"))
@@ -21,7 +22,7 @@ public class SoundManager : MonoBehaviour
     }
     public void ChangeVolume()
     {
-        FindObjectOfType<Music>().GetComponent<AudioSource>().volume = volumeSlider.value;
+        music.GetComponent<AudioSource>().volume = volumeSlider.value;
         Save();
     }
 

@@ -12,10 +12,16 @@ public class GameManager : MonoBehaviour
     private float checkpoint;
 
     public GameObject completeLevelUI;
+    StopBlock stopBlock;
 
     private void Awake()
     {
         S = this;
+    }
+
+    private void Start()
+    {
+        stopBlock = FindObjectOfType<StopBlock>();
     }
 
     public void CompleteLevel()
@@ -53,6 +59,9 @@ public class GameManager : MonoBehaviour
 
     void Respawn()
     {
+        if (stopBlock != null && stopBlock.PlayerIsOnBlock)
+            stopBlock.PlayerActive();
+
         if (CheckPointsStats.GetActualCheckPoint() == 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

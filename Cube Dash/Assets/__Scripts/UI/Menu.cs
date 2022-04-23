@@ -14,8 +14,6 @@ public class Menu : MonoBehaviour
     {
         int highestLevel = LevelStats.GetHighestLevel();
 
-        Debug.Log(highestLevel);
-
         if (highestLevel == 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
